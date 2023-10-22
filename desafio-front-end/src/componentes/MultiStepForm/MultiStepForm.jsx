@@ -8,9 +8,11 @@ import {
   StepLabel,
   Box,
 } from "@mui/material";
-import Step1 from "./Step1";
-import Step2 from "./Step2";
-import Step3 from "./Step3";
+import Check from '@mui/icons-material/Check';
+import Step1 from "../Step1";
+import Step2 from "../Step2";
+import Step3 from "../Step3";
+import {QontoConnector , QontoStepIconRoot} from "./Styles"
 
 const steps = ["Informações Básicas", "Detalhes", "Envio de Arquivos"];
 
@@ -33,16 +35,30 @@ const MultiStepForm = () => {
     });
   };
 
+  function QontoStepIcon(props) {
+    const { active, completed, className } = props;
+  
+    return (
+      <QontoStepIconRoot ownerState={{ active }} className={className}>
+        {completed ? (
+          <Check className="QontoStepIcon-completedIcon" />
+        ) : (
+          <div className="QontoStepIcon-circle" />
+        )}
+      </QontoStepIconRoot>
+    );
+  }
+
   return (
     <Container
       maxWidth="md"
       sx={{ mt: 8, backgroundColor: "white", padding: 8 }}
     >
     <Box sx={{border: 1 , borderColor: 'rgb(210, 210, 210)' , padding: 5 , borderRadius:2}}>
-      <Stepper activeStep={activeStep} alternativeLabel>
+      <Stepper activeStep={activeStep} alternativeLabel connector={<QontoConnector/>}>
         {steps.map((label) => (
           <Step key={label}>
-            <StepLabel>{label}</StepLabel>
+            <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
           </Step>
         ))}
       </Stepper>

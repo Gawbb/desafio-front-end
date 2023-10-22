@@ -1,4 +1,4 @@
-import MultiStepForm from './componentes/MultiStepForm';
+import MultiStepForm from './componentes/MultiStepForm/MultiStepForm';
 import { Box } from '@mui/material';
 
 function App() {
