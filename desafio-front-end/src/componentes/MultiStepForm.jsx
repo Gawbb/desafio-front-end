@@ -2,13 +2,15 @@ import { useState } from "react";
 import {
   Container,
   Grid,
-  Typography,
   Button,
-  TextField,
   Stepper,
   Step,
   StepLabel,
+  Box,
 } from "@mui/material";
+import Step1 from "./Step1";
+import Step2 from "./Step2";
+import Step3 from "./Step3";
 
 const steps = ["Informações Básicas", "Detalhes", "Envio de Arquivos"];
 
@@ -32,8 +34,12 @@ const MultiStepForm = () => {
   };
 
   return (
-    <Container maxWidth="sm"  sx={{ mt: 8, backgroundColor:'white' , padding: 10}}>
-      <Stepper activeStep={activeStep}>
+    <Container
+      maxWidth="md"
+      sx={{ mt: 8, backgroundColor: "white", padding: 8 }}
+    >
+    <Box sx={{border: 1 , borderColor: 'rgb(210, 210, 210)' , padding: 5 , borderRadius:2}}>
+      <Stepper activeStep={activeStep} alternativeLabel>
         {steps.map((label) => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -41,65 +47,40 @@ const MultiStepForm = () => {
         ))}
       </Stepper>
       <Grid container direction="column" alignItems="center" spacing={2}>
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{width: '100%'}}>
           {activeStep === 0 && (
-            <>
-              <Typography variant="h6">Etapa 1</Typography>
-              <TextField
-                label="Name"
-                name="name"
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-              />
-            </>
+            
+            <Step1 handleChange={handleChange}/>  
+           
           )}
           {activeStep === 1 && (
-            <>
-              <Typography variant="h6">Step 2</Typography>
-              <TextField
-                label="Email"
-                name="email"
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-              />
-            </>
+            <Step2 handleChange={handleChange}/>
           )}
           {activeStep === 2 && (
-            <>
-              <Typography variant="h6">Step 3</Typography>
-              <TextField
-                label="Email"
-                name="email"
-                onChange={handleChange}
-                fullWidth
-                margin="normal"
-              />
-            </>
+            <Step3 handleChange={handleChange}/>
           )}
         </Grid>
         <Grid item xs={12}>
           <Button
             variant="contained"
-            color="primary"
+            sx={{backgroundColor: '#5828AC'}}
             onClick={handleNext}
             disabled={activeStep === steps.length - 1}
           >
-            {activeStep === steps.length - 1 ? "Submit" : "Next"}
+            {activeStep === steps.length - 1 ? `Enviar` : `Avançar para ${steps[activeStep + 1]}`}
           </Button>
           {activeStep > 0 && (
             <Button
               variant="contained"
-              color="secondary"
               onClick={handleBack}
-              sx={{ marginLeft: 8 }}
+              sx={{ marginLeft: 8 , backgroundColor: '#A39DAD'}}
             >
-              Back
+              Voltar
             </Button>
           )}
         </Grid>
       </Grid>
+      </Box>
     </Container>
   );
 };
