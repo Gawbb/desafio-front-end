@@ -61,6 +61,15 @@ const MultiStepForm = () => {
           )}
         </Grid>
         <Grid item xs={12}>
+        {activeStep == 1 && (
+            <Button
+              variant="contained"
+              onClick={handleBack}
+              sx={{ marginRight: 2 , backgroundColor: '#A39DAD'}}
+            >
+              Selecione outro cliente
+            </Button>
+          )}
           <Button
             variant="contained"
             sx={{backgroundColor: '#5828AC'}}
@@ -73,7 +82,7 @@ const MultiStepForm = () => {
             <Button
               variant="contained"
               onClick={handleBack}
-              sx={{ marginLeft: 8 , backgroundColor: '#A39DAD'}}
+              sx={{ marginLeft: 2 , backgroundColor: '#A39DAD'}}
             >
               Voltar
             </Button>
