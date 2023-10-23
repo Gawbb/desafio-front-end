@@ -1,7 +1,6 @@
 import { styled } from "@mui/material/styles";
-export const Input = styled("input")(({ theme }) => ({
 
-}));
+export const Input = styled("input")(({ theme }) => ({}));
 
 export const Form = styled("form")(({ theme }) => ({
   display: "flex",
@@ -12,5 +11,5 @@ export const Form = styled("form")(({ theme }) => ({
   borderRadius: 4,
   height: 180,
   width: "100%",
-  padding:5,
+  padding: 5,
 }));

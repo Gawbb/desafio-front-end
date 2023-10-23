@@ -1,5 +1,6 @@
 import { Container, TextField, Grid, Typography } from "@mui/material";
 import FileUpload from "./FileUpload/FileUpload";
+import CardUpload from "./CardUpload/CardUpload";
 
 export default function Step3({ handleChange }) {
   return (
@@ -12,7 +13,11 @@ export default function Step3({ handleChange }) {
           <FileUpload/>
         </Grid>
         <Grid item xs={6}>
-          <Typography>Arquivos selecionados</Typography>
+          <Typography sx={{fontSize:14, marginTop:5, marginBottom:1}}>Arquivos selecionados</Typography>
+          <CardUpload/>
+          <CardUpload/>
+          <CardUpload/>
+          <CardUpload/>
         </Grid>
       </Grid>
     </Container>

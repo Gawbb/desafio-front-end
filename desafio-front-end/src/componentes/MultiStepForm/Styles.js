@@ -1,4 +1,5 @@
 import { styled } from "@mui/material/styles";
+import { Button } from "@mui/material";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
@@ -46,4 +47,11 @@ export const QontoStepIconRoot = styled("div")(({ theme, ownerState }) => ({
     borderRadius: "50%",
     backgroundColor: "currentColor",
   },
+}));
+
+export const ContainerButton = styled(Button)(({ theme }) => ({
+  '&:hover':{
+      backgroundColor: "#5828AC"
+  }
+
 }));
