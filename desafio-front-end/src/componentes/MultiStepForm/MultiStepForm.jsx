@@ -1,14 +1,6 @@
-import { useState } from "react";
-import {
-  Container,
-  Grid,
-  Button,
-  Stepper,
-  Step,
-  StepLabel,
-  Box,
-} from "@mui/material";
 import Check from "@mui/icons-material/Check";
+import { Box, Container, Grid, Step, StepLabel, Stepper } from "@mui/material";
+import { useState } from "react";
 import Step1 from "../Step1";
 import Step2 from "../Step2";
 import Step3 from "../Step3";
@@ -28,7 +20,7 @@ const MultiStepForm = () => {
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
-  
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -60,8 +52,16 @@ const MultiStepForm = () => {
 
   return (
     <Container
-      maxWidth="lg"
-      sx={{ mt: 8, backgroundColor: "white", padding: 8 }}
+      // maxWidth="lg"
+
+      sx={{
+        backgroundColor: "white",
+        minWidth: "100vw",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Box
         sx={{
@@ -69,6 +69,7 @@ const MultiStepForm = () => {
           borderColor: "rgb(210, 210, 210)",
           padding: 5,
           borderRadius: 2,
+          width: "auto",
         }}
       >
         <Stepper
@@ -83,10 +84,14 @@ const MultiStepForm = () => {
           ))}
         </Stepper>
         <Grid container direction="column" alignItems="center" spacing={2}>
-          <Grid item xs={12} sx={{ width: "100%" }}>
-            {activeStep === 0 && <Step1 handleChange={handleChange} />}
-            {activeStep === 1 && <Step2 handleChange={handleChange} />}
-            {activeStep === 2 && <Step3 handleChange={handleChange} />}
+          <Grid item sx={{ width: "100%" }}>
+            {activeStep === 0 ? (
+              <Step1 handleChange={handleChange} />
+            ) : activeStep === 1 ? (
+              <Step2 handleChange={handleChange} />
+            ) : (
+              <Step3 handleChange={handleChange} />
+            )}
           </Grid>
           <Grid item xs={12}>
             {activeStep == 1 && (

@@ -1,12 +1,11 @@
-import MultiStepForm from './componentes/MultiStepForm/MultiStepForm';
-import { Box } from '@mui/material';
+import MultiStepForm from "./componentes/MultiStepForm/MultiStepForm";
+import { AppProvider } from "./contexts/app-context";
 
 function App() {
   return (
-    <Box sx={{}}>
-      {/*<h1>Formulário de Múltiplas Etapas</h1>*/}
+    <AppProvider>
       <MultiStepForm />
-    </Box>
+    </AppProvider>
   );
 }
 
