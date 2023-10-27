@@ -17,4 +17,10 @@
 <br>
 2 - Foi criado a lógica de upload de arquivos na última etapa do formulário.
 <br>
-3 - Como etapa final foi utilizado a plataforma vercel para hospedagem do site. 
+3 - Como etapa final foi utilizado a plataforma vercel para hospedagem do site:
+https://desafio-front-end-beta.vercel.app/.
+<br>
+<br>
+<br>
+
+Desenvolvido por Gabriela Iaccino.
