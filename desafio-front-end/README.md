@@ -1,8 +1,20 @@
-# React + Vite
+# Desafio Front-End 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Tecnologias usadas: 
+<br>
+1 - React + Vite
+<br>
+2 - Javascript 
+<br>
+3 - Material UI (Styled Components)
+<br>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### O que foi feito: 
+<br>
+1 - Foi criado o formulário de multietapas utilizando o Material UI.
+<br>
+2 - Foi criado a lógica de upload de arquivos na última etapa do formulário.
+<br>
+3 - Como etapa final foi utilizado a plataforma vercel para hospedagem do site. 
